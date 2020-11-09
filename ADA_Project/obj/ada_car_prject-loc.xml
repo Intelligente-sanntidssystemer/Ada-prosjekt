@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file>C:\GNAT\Ada_Drivers_Library\examples\NRF52_DK\ADA_Project\ada_car_prject.gpr</vfs_file>
+    <file_marker column=" 4" line=" 15" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\examples\NRF52_DK\buttons\buttons.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 92" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\nrf52_dk-ios.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\nrf52_dk-ios.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 3" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\sensor.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 3" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\sensor.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 48" line=" 211" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\nrf52_dk-time.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 35" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\nrf52_dk-time.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 4" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\sensor.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 4" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\sensor.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\arch\ARM\Nordic\drivers\nrf_common\nrf-clock.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 68" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\arch\ARM\Nordic\drivers\nrf_common\nrf-clock.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 2" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\motor.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 17" line=" 1" >
+      <vfs_project>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\nrf52_dk_zfp.gpr</vfs_project>
+      <vfs_file>C:\GNAT\Ada_Drivers_Library\boards\NRF52_DK\src\motor.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
