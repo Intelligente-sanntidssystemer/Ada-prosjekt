@@ -4,7 +4,7 @@ with NRF52_DK.Buttons; use NRF52_DK.Buttons;
 
 package body SteeringControl is
    
-   procedure Servocontrol(ServoPin : NRF52_DK.IOs.Pin_Id; Value : NRF52_DK.IOs.Analog_Value) is 
+   procedure Servocontrol(ServoPin : NRF52_DK.IOs.Pin_Id; Value : NRF52_DK.IOs.Analog_Value) is    --Servo --
       
    begin
       --Writing values to the servo motor.
@@ -14,7 +14,7 @@ package body SteeringControl is
 
    end Servocontrol;
    
-   procedure Direction_Controller is
+   procedure Direction_Controller is --Turning left/right with buttons by changing servo degrees --
    begin
       Servocontrol(3,300);
       loop
@@ -34,7 +34,7 @@ package body SteeringControl is
       end loop;
    end Direction_Controller;
    
-   procedure Motor_Controller is
+   procedure Motor_Controller is  --Forward/Backward using buttons --
    begin
    loop
             --CLOCKWISE
