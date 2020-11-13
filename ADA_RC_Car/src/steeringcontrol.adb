@@ -41,45 +41,45 @@ package body SteeringControl is
          when NRF52_DK.Buttons.State (Button_3) = Pressed =>
             --FORWARD
             NRF52_DK.IOs.Set (13, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (13, false);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             
             NRF52_DK.IOs.Set (27, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (27, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             
             NRF52_DK.IOs.Set (21, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (21, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             
             NRF52_DK.IOs.Set (23, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (23, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
          when NRF52_DK.Buttons.State (Button_4) = Pressed =>
             --BACKWARDS
             NRF52_DK.IOs.Set (23, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (23, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             
             NRF52_DK.IOs.Set (21, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (21, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             
             NRF52_DK.IOs.Set (27, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (27, False);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
 
             NRF52_DK.IOs.Set (13, True);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
             NRF52_DK.IOs.Set (13, false);
-            NRF52_DK.Time.Delay_Ms (5);
+            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       end case; 
       
    end Motor_Controller;
@@ -92,24 +92,24 @@ package body SteeringControl is
       --to even it out, since we thought it sounded better than stopping the motor completely.
       --BACKWARD LOOP
       NRF52_DK.IOs.Set (23, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (23, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
          
       NRF52_DK.IOs.Set (21, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (21, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
 
       NRF52_DK.IOs.Set (27, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (27, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
 
       NRF52_DK.IOs.Set (13, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (13, false);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       
    end Crash_Stop_Forward;  
    
@@ -118,24 +118,24 @@ package body SteeringControl is
       --Same thing here as with the function above, but here we run a forward loop.
       --FORWARD LOOP
       NRF52_DK.IOs.Set (13, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (13, false);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       
       NRF52_DK.IOs.Set (27, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (27, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       
       NRF52_DK.IOs.Set (21, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (21, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
 
       NRF52_DK.IOs.Set (23, True);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
       NRF52_DK.IOs.Set (23, False);
-      NRF52_DK.Time.Delay_Ms (5);
+      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
    end Crash_Stop_Backward;
    
         
