@@ -3,8 +3,6 @@ with NRF52_DK.IOs;
 with NRF52_DK.Buttons; use NRF52_DK.Buttons;
 
 package body SteeringControl is
-   Direction_Control : NRF52_DK.Buttons.State := Released;
-   Motor_Control : NRF52_DK.Buttons.State := Released;
    
    procedure Servocontrol(ServoPin : NRF52_DK.IOs.Pin_Id; Value : NRF52_DK.IOs.Analog_Value) is 
       
@@ -18,69 +16,62 @@ package body SteeringControl is
    
    procedure Direction_Controller is
    begin
-      --Direction control using buttons to control the servo.
-      --When one button is pressed it goes one way and the other one the another way.
-      Case Direction_Control is
-         when NRF52_DK.Buttons.State(Button_1) = Pressed =>
-            Servocontrol(3,200);
+      Servocontrol(3,300);
+      loop
+         while NRF52_DK.Buttons.State(Button_1) = Pressed loop
+            Servocontrol(3,200); --0value at 0 degrees, 200value medium state, 400value max degrees 180
             if NRF52_DK.Buttons.State(Button_1) = Released then
                Servocontrol(3,300);
             end if;
-         when NRF52_DK.Buttons.State(Button_2) = Pressed =>
-            Servocontrol(3,400);
+         end loop;
+         while (NRF52_DK.Buttons.State(Button_2) = Pressed) loop
+            Servocontrol(3,400); --0value at 0 degrees, 200value medium state, 400value max degrees 180
             if NRF52_DK.Buttons.State(Button_2) = Released then
                Servocontrol(3,300);
             end if;
-      end case;
+         end loop;
+
+      end loop;
    end Direction_Controller;
    
    procedure Motor_Controller is
    begin
-      Case Motor_Control is
-         --2 buttons to control the motor in order to get the car to drive forwards/backwards.
-         when NRF52_DK.Buttons.State (Button_3) = Pressed =>
-            --FORWARD
-            NRF52_DK.IOs.Set (13, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (13, false);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            
-            NRF52_DK.IOs.Set (27, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (27, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            
-            NRF52_DK.IOs.Set (21, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (21, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            
-            NRF52_DK.IOs.Set (23, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (23, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-         when NRF52_DK.Buttons.State (Button_4) = Pressed =>
-            --BACKWARDS
-            NRF52_DK.IOs.Set (23, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (23, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            
-            NRF52_DK.IOs.Set (21, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (21, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            
-            NRF52_DK.IOs.Set (27, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (27, False);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+   loop
+            --CLOCKWISE
+      while (NRF52_DK.Buttons.State(Button_3) = Pressed) loop -- DRIVE FORWARD --
+         NRF52_DK.IOs.Set (27, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (27, false);
+         NRF52_DK.Time.Delay_Ms (5);
 
-            NRF52_DK.IOs.Set (13, True);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-            NRF52_DK.IOs.Set (13, false);
-            NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      end case; 
+         NRF52_DK.IOs.Set (21, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (21, False);
+         NRF52_DK.Time.Delay_Ms (5);
+
+         NRF52_DK.IOs.Set (23, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (23, False);
+         NRF52_DK.Time.Delay_Ms (5);
+      end loop;
+      while (NRF52_DK.Buttons.State(Button_4) = Pressed) loop -- DRIVE Backward --
+         --Anti CLOCKWISE
+         NRF52_DK.IOs.Set (23, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (23, False);
+         NRF52_DK.Time.Delay_Ms (5);
+
+         NRF52_DK.IOs.Set (21, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (21, False);
+         NRF52_DK.Time.Delay_Ms (5);
+
+         NRF52_DK.IOs.Set (27, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (27, False);
+         NRF52_DK.Time.Delay_Ms (5);
+      end loop;
+   end loop;
       
    end Motor_Controller;
    
@@ -91,25 +82,20 @@ package body SteeringControl is
       --is active, then this would run and run a loop of backwards on motor in order
       --to even it out, since we thought it sounded better than stopping the motor completely.
       --BACKWARD LOOP
-      NRF52_DK.IOs.Set (23, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (23, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-         
-      NRF52_DK.IOs.Set (21, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (21, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+         NRF52_DK.IOs.Set (23, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (23, False);
+         NRF52_DK.Time.Delay_Ms (5);
 
-      NRF52_DK.IOs.Set (27, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (27, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+         NRF52_DK.IOs.Set (21, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (21, False);
+         NRF52_DK.Time.Delay_Ms (5);
 
-      NRF52_DK.IOs.Set (13, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (13, false);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+         NRF52_DK.IOs.Set (27, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (27, False);
+         NRF52_DK.Time.Delay_Ms (5);
       
    end Crash_Stop_Forward;  
    
@@ -117,25 +103,20 @@ package body SteeringControl is
    begin
       --Same thing here as with the function above, but here we run a forward loop.
       --FORWARD LOOP
-      NRF52_DK.IOs.Set (13, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (13, false);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      
-      NRF52_DK.IOs.Set (27, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (27, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      
-      NRF52_DK.IOs.Set (21, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (21, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+         NRF52_DK.IOs.Set (27, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (27, false);
+         NRF52_DK.Time.Delay_Ms (5);
 
-      NRF52_DK.IOs.Set (23, True);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
-      NRF52_DK.IOs.Set (23, False);
-      NRF52_DK.Time.Delay_Ms (UInt64 (5 / 1000));
+         NRF52_DK.IOs.Set (21, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (21, False);
+         NRF52_DK.Time.Delay_Ms (5);
+
+         NRF52_DK.IOs.Set (23, True);
+         NRF52_DK.Time.Delay_Ms (5);
+         NRF52_DK.IOs.Set (23, False);
+         NRF52_DK.Time.Delay_Ms (5);
    end Crash_Stop_Backward;
    
         
