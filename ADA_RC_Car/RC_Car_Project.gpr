@@ -1,4 +1,4 @@
-with "NRF52_DK/nrf52_dk_zfp.gpr";
+with "../../../boards/NRF52_DK/nrf52_dk_zfp.gpr";
 
 project RC_Car_Project is
 
