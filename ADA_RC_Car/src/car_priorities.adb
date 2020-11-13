@@ -12,7 +12,7 @@ package body car_priorities is
    Period_Time : NRF52_DK.Time.Time_Ms := NRF52_DK.Time.Clock;
      
    task body Emergency_Stop is
-      Deadline_Distance : Float := 100.0; --Deadline distance which is 100cm.
+      Max_Distance : Float := 100.0; --Deadline distance which is 100cm.
    begin
       loop
          --This is the highest priority task
