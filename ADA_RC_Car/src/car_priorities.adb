@@ -22,7 +22,7 @@ package body car_priorities is
          delay until Next_Deadline;
          Period_Time := NRF52_DK.Time.Clock;
          while Sensor.HCSR04_Distance < Deadline_Distance loop
-            SteeringControl.Crash_Stop_Forward;
+            SteeringControl.Crash_Stop_Forward; 
          end loop;
          
          while sensor_behind.HCSR04_Behind_Distance < Deadline_Distance loop
@@ -41,7 +41,7 @@ package body car_priorities is
          --carries over to the next task.
          delay until Next_Deadline;
          Period_Time := NRF52_DK.Time.Clock;
-         SteeringControl.Motor_Controller;
+         SteeringControl.Motor_Controller; --This tasks allows motor controls forward/backward --
          Next_Deadline := Next_Deadline + (NRF52_DK.Time.Clock - Period_Time);
       end loop;
       
@@ -54,7 +54,7 @@ package body car_priorities is
          --higher priority tasks with an update to Next_Deadline at the end. 
          delay until Next_Deadline;
          Period_Time := NRF52_DK.Time.Clock;
-         SteeringControl.Direction_Controller;
+         SteeringControl.Direction_Controller; --This tasks allows turning of car--
          Next_Deadline := Next_Deadline + (NRF52_DK.Time.Clock - Period_Time);
       end loop;
    end Direction_Steering;
