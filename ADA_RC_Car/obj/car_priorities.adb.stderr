@@ -1,0 +1,16 @@
+car_priorities.adb:5:14: warning: unit "NRF52_DK.IOs" is not referenced
+car_priorities.adb:18:22: expect Time types for "delay until"
+car_priorities.adb:35:22: expect Time types for "delay until"
+car_priorities.adb:46:22: expect Time types for "delay until"
+car_priorities.ads:2:04: violation of restriction "no_tasking" at system.ads:52
+car_priorities.ads:2:04: construct not allowed in configurable run-time mode
+car_priorities.ads:2:04: file s-taskin.ads not found
+car_priorities.ads:2:04: entity "System.Tasking.Task_Id" not available
+car_priorities.ads:3:04: violation of restriction "no_tasking" at system.ads:52
+car_priorities.ads:3:04: construct not allowed in configurable run-time mode
+car_priorities.ads:3:04: file s-taskin.ads not found
+car_priorities.ads:3:04: entity "System.Tasking.Task_Id" not available
+car_priorities.ads:4:04: violation of restriction "no_tasking" at system.ads:52
+car_priorities.ads:4:04: construct not allowed in configurable run-time mode
+car_priorities.ads:4:04: file s-taskin.ads not found
+car_priorities.ads:4:04: entity "System.Tasking.Task_Id" not available
