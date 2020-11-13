@@ -25,7 +25,7 @@ package body car_priorities is
             SteeringControl.Crash_Stop_Forward; 
          end loop;
          
-         while sensor_behind.HCSR04_Behind_Distance < Deadline_Distance loop
+         while sensor_behind.HCSR04_Behind_Distance < Max_Distance loop
             SteeringControl.Crash_Stop_Backward;
          end loop;
          Next_Deadline := Next_Deadline + (NRF52_DK.Time.Clock - Period_Time);
