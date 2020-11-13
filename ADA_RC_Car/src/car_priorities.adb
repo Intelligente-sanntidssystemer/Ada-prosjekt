@@ -12,7 +12,7 @@ package body car_priorities is
    Period_Time : NRF52_DK.Time.Time_Ms := NRF52_DK.Time.Clock;
      
    task body Emergency_Stop is
-      Max_Distance : Float := 100.0; --Deadline distance which is 100cm.
+      Max_Distance : Float := 100.0; --Max distance which is 100cm.
    begin
       loop
          --This is the highest priority task
@@ -21,7 +21,7 @@ package body car_priorities is
          --with the time spent to run this loop
          delay until Next_Deadline;
          Period_Time := NRF52_DK.Time.Clock;
-         while Sensor.HCSR04_Distance < Deadline_Distance loop
+         while Sensor.HCSR04_Distance < Max_Distance loop
             SteeringControl.Crash_Stop_Forward; 
          end loop;
          
